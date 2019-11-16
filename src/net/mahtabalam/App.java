@@ -29,5 +29,7 @@ public class App {
 			dll.printLinkedList();
 			System.out.println("Head : " + dll.head);
 			System.out.println("Tail : " + dll.tail);
+			dll.iterateReverse();
+			
 		}
 }
