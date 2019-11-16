@@ -17,10 +17,46 @@ public class DoublyLinkedList {
     }
     
     public void insertBeforeNode(Node node, Node nodeToInsert) {
-    	
+    	// If head or tail is null, then it means linked list is empty
+    	// So add the node as the first Node
+    	if(head == null || tail == null) {
+    		nodeToInsert.next = null;
+    		nodeToInsert.prev = null;
+    		head = node;
+    		tail = node;
+    	} else {
+    		// If we are inserting before head
+    		if(node == head) {
+    			head = nodeToInsert;
+    		} else {
+    			node.prev.next = nodeToInsert;
+    			nodeToInsert.prev = node.prev;
+    		}
+    		node.prev = nodeToInsert;
+			nodeToInsert.next = node;
+    	}
     }
     
     public void insertAfterNode(Node node, Node nodeToInsert) {
+    	// If head or tail is null, then it means linked list is empty
+    	// So add the node as the first Node
+    	if(head == null || tail == null) {
+    		nodeToInsert.next = null;
+    		nodeToInsert.prev = null;
+    		head = node;
+    		tail = node;
+    	} else {
+    		// If we are inserting after tail
+    		if(node == tail) {
+    			tail = nodeToInsert;
+    		} else {
+    			nodeToInsert.next = node.next;
+    			node.next.prev = nodeToInsert;
+    		}
+    		node.next = nodeToInsert;
+			nodeToInsert.prev = node;
+			
+    	}
     	
     }
     
@@ -79,9 +115,10 @@ public class DoublyLinkedList {
 	public void printLinkedList() {
 		Node node = head;
 		while(node != null) {
-			System.out.println(" "+ node.value);
+			System.out.print(" "+ node.value+ "   ");
 			node = node.next;
 		}
+		System.out.println();
 	}
 	
 

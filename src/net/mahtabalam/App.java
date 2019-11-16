@@ -19,9 +19,13 @@ public class App {
 //			dll.printLinkedList();
 //			System.out.println("Head : " + dll.head);
 //			System.out.println("Tail : " + dll.tail);
-			dll.removeNodesWithValue(1);
-			
-			dll.removeNodesWithValue(6);
+//			dll.removeNodesWithValue(1);
+//			
+//			dll.removeNodesWithValue(6);
+			dll.printLinkedList();
+			System.out.println("Head : " + dll.head);
+			System.out.println("Tail : " + dll.tail);
+			dll.insertAfterNode(head, new Node(10));
 			dll.printLinkedList();
 			System.out.println("Head : " + dll.head);
 			System.out.println("Tail : " + dll.tail);
